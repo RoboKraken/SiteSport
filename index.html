@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>SuperSport</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- va fi explicat când ajungem la CSS -->
-    <meta name="keywords" content="internet, tehnici web, HTML, taguri"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
-    <meta name="description" content="Curs de Tehnici Web. Limbajul HTML. Taguri."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
-    <meta name="author" content="Gaspar Robert">  <!-- autorul/autoarea paginii-->
-    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+    <meta name="keywords" content="sport, imbracaminte, vestimentatie, echipament, camping, hiking, pantofi, cort"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+    <meta name="description" content="Cele mai bune articole de sport din lume!"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <meta name="author" content="Gaspar Robert">
+    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" >
+    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" >
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest">
 </head>
 <body>
     <header>
-        <h1>Titlul paginii</h1>
+        <h1 id="inceput">SuperSport</h1>
         <nav>
             <ul>
                 <li><a href="#sec1">Sectiune1</a>
@@ -38,19 +38,42 @@
         </h2>
         <section id="subsec1">
             <h3>Subsectiune</h3>
-            <p>Ratione ab tempore vel mollitia nihil cupiditate. Nihil est possimus deserunt ut. Dignissimos voluptatem est omnis rerum nostrum quos voluptates et. Eaque aliquid explicabo sit similique vel totam voluptatem sint. Nostrum nihil doloremque hic.</p>
+            <blockquote cite="https://booknation.ro/citate-despre-sport/"><i>Sportul reprezintă vigoarea vitală a umanităţii</i> -George Calinescu</blockquote>
         </section>
         <section id="subsec2">
             <h3>Subsectiune 2</h3>
+            <p> Pentru cele mai <strong>bune</strong> articole sportive, alegeti <b>SuperSport</b></p>
+            <a href="https://www.dex.ro/sport">Despre sport</a>
+            <p>Daca vreti sa aflati mai multe despre sport puteti descarca un articol <a href="./resurse/documente/despre_sport.txt" download="sport">aici</a></p>
+            <p>Ratione ab tempore vel mollitia nihil cupiditate. Nihil est possimus deserunt ut. Dignissimos voluptatem est omnis rerum nostrum quos voluptates et. Eaque aliquid explicabo sit similique vel totam voluptatem sint. Nostrum nihil doloremque hic.</p>
+
         </section>
     </section>
     <section id="sec2">
         <h2>Sectiune 2</h2>
-        
+        <figure>
+            <picture>
+                <source srcset="./resurse/imagini/incaltaminte1%20mic.png" media="(max-width:700px)">
+                <source srcset="./resurse/imagini/incaltaminte1%20mediu.png" media="(max-width:1200px)">
+                <img src="./resurse/imagini/incaltaminte1%20mare.png" alt="incaltaminte">
+            </picture>
+            <figcaption>
+                <em>Oferta Noastra</em>
+            </figcaption>
+        </figure>
+    </section>
+    <section id="sec3">
+        <h2>Informatii de la site-uri externe</h2>
+        <a href="https://ro.wikipedia.org/wiki/Sport" target="iframe1">Sport</a>
+        <a href="https://ro.wikipedia.org/wiki/Sport_%C3%AEn_Rom%C3%A2nia" target="iframe1">Sport in romania</a>
+        <a href="https://ro.wikipedia.org/wiki/Muzeul_Sportului_din_Rom%C3%A2nia" target="iframe1">Muzeul sportului</a>
+        <iframe src="https://ro.wikipedia.org/wiki/Sport" title="Informatii despre sport" name="iframe1"></iframe>
     </section>
 </main>
 <footer>
     <small>&copy; Robert 2025</small>
+    <a href="#inceput">Acasa</a>
+    <time datetime="2025-03-14 16:00">Creat pe 14 martie 2025</time>
 </footer>
 </body>
 </html>
