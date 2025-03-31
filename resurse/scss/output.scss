@@ -6,3 +6,21 @@ $a:green;
 div{
     color:$a;
 }
+
+ul.meniu{
+    display:flex;
+    list-style: none;
+    padding:0;
+
+    ul{
+        display:none;
+        padding:0;
+    }
+
+    li{
+        width:var(--latime);
+        height:var(--inaltime);
+        
+
+    }
+}

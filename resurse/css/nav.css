@@ -1,0 +1,88 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul.meniu ul{
+    animation-name: animatie_submeniu;
+    animation-timing-duration: linear;
+    animation-iteration-count: 1;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    transform-origin: 50% 0;
+    z
+}
+
+@keyframes animatie_submeniu{
+    0%{
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100%{
+        opacity:1;
+        transform: scaleY(100%);
+    }
+}
