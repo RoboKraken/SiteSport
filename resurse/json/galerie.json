@@ -1,0 +1,37 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"backpack.jpg",
+			"descriere":"Backpack",
+			"luni":["martie","februarie","noiembrie","aprilie", "decembrie"]
+		},
+		{
+			"fisier":"bocanci.jpg",
+			"descriere":"Bocanci de hike",
+			"luni":["ianuarie","februarie","iunie"]
+			
+		},
+		{
+			"fisier":"cort.jpg",
+			"descriere":"Cort de camping",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"frontala.jpg",
+			"descriere":"Frontala",
+			
+			"luni":["noiembrie","aprilie", "decembrie"]
+		},
+		{
+			"fisier":"schiuri.jpg",
+			"descriere":"Prăjitură cu ciocolată",
+			
+			"luni":["noiembrie","aprilie", "decembrie"]
+		},
+		{
+			"fisier":"snowboard.jpg",
+			"descriere":"Tartă cu afine"
+		}
+	]
+}

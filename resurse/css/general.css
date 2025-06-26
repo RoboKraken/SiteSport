@@ -75,7 +75,7 @@ main {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 5px auto;
     padding: 0;
 }
 
@@ -397,4 +397,11 @@ main {
         font-size: 0.8rem;
         min-width: 100px;
     }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
 }
