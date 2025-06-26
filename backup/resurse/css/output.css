@@ -1,0 +1,21 @@
+p {
+  color: red;
+}
+
+div {
+  color: green;
+}
+
+ul.meniu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+ul.meniu ul {
+  display: none;
+  padding: 0;
+}
+ul.meniu li {
+  width: var(--latime);
+  height: var(--inaltime);
+}

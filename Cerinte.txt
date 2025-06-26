@@ -1,0 +1,140 @@
+Etapa 2
+Identificator: schema-cromatica
+Alegeți o culoare de bază reprezentativă pentru site-ul vostru. Alegeti o schemă cromatică de minim 5 culori folosind site-ul: https://color.adobe.com/create/color-wheel având drept culoare principală(culoarea din mijloc, în cadrul toolului) culoarea aleasă de voi. Specificați în fisierul-documentație (creat în etapa 1) schema cromatică aleasă și motivul alegerii acelui tip de culoare (referindu-va la tema site-ului și psihologia culorilor) În interiorul tagului body, pentru cele 5 culori alese definiți variabile pentru culori de background, de text, de border, de highlight etc. Veți folosi in CSS doar valorile variabilelor, nu valorile specificate propriu-zis. Puteți alege și mai mult de 5 culori dar să fie toate în armonie cu culoarea principală a schemei cromatice.
+
+Identificator: layout-responsive
+Se va realiza un layout responsive pentru prima pagină (pentru celelalte pagini alegeți voi layoutul). Pentru layout aveți următoarele cerințe:
+
+Layoutul paginii se va face cu ajutorul unui grid care va cuprinde conținutul din mainul paginii (nu e obligatoriu ca headerul si footerul sa fie si ele intr-un grid). Pe ecranul mare layoutul va avea forma:
+imagine layout
+
+Atenție imaginea indică doar harta gridului (rândurile șî coloanele) nu și dimensiunile. Nu trebuie să respectați faptul că o coloană din grid pare să fie de aceeași lătime cu altă coloană din grid; idem pentru rânduri.
+
+Veți stabili voi forma pentru ecranul mediu și cel mic, cu condiția să schimbați forma pe ecranul mediu (să nu se afișeze la fel ca pe ecranul mare, iar pe ecranul mic trebuie să nu mai existe coloane.
+
+Rolul propus al zonelor (nu e obligatoriu, puteti decide alt rol pentru ele) din imagine este următorul (pentru zonele unde se specifică să puneți un placeholder, veți folosi un text de tipul "Lorem ipsum":
+
+Zona 1 este pentru prezentare. Este primul lucru pe care îl vede utilizatorul când intră pe pagină. Va avea un rol de poster cu text sau imagini atractive care să descrie scopul site-ului. Alegeți unul dintre tipurile de layout în funcție de conținut:
+Z-pattern pentru un conținut cuprinzând mai mult imagini
+F-pattern dacă zona 1 cuprinde în special text.
+Zona 2 este pentru tabel.
+Zona 3 este pentru calendarul de evenimente. Veți pune un placeholder.
+Zona 4 este pentru anunțuri. Veți pune un placeholder.
+Zona 5 este pentru lista de utilizatori online. Placeholder.
+Zona 6 este pentru date despre utilizator și statistici. Placeholder.
+Zona 7 este pentru date despre site și server. Placeholder.
+Zona 8 este pentru diverse alte tipuri de conținut (ce considerați că ar mai trebui să aibă pagina; textul scris în etapa 1 etc.). Pe aceasta o puteți stiliza așa cum vă place vouă și veți primi punctaj pe aspect și creativitate.
+Atenție, o pondere mare din punctaj este dată de faptul că layoutul nu apare tăiat (de exemplu din cauza unui overflow:hidden pe un container cu conțiunut prea mare și nu există scrollbar orizontal pe viewport (se acceptă scrollbar orizontal doar unde e cerut în mod explicit de către un task). Gridul va fi definit prin grid-template-areas.
+
+Scrisul trebuie să descrească odată cu redimensionarea paginii (pe ecran mic să fie scris mic, pe ecran mediu scrisul un pic mai mare, iar pe ecran mare scrisul să fie un pic mai mare decât pe mediu. Diferențele vor fi mici de 1-2px. În afară de font-size-ul html-ului restul dimensiunilor de text se vor da în unități relative (em, rem, vw etc.). (Des)creșterea dimensiunii textului de la o dimensiune la alta de ecran se va face printr-o tranziție.
+Animațiile (cu excepția celor cerute în mod special, în alte taskuri) vor fi dezactivate pe ecran mic (eventual și mediu, dacă doriți).
+
+Etapa 3
+Se va implementa un meniu derulant al site-ului care va fi prezent pe fiecare pagină și va lega toate paginile între ele. Nu e obligatoriu să folosiți aceleași culori, fonturi, dimensiuni ca în enunț și imagini/videoclipuri.
+
+Cerinte HTML. Meniul va fi implementat cu ajutorul tagului <nav> care contine o lista neordonata cu linkuri.
+
+Meniul va prezenta minim două submeniuri dintre care:
+
+unul conține linkuri către alte pagini din site(chiar dacă nu există încă). Aceste pagini sunt grupate în meniu sub un nume descriptiv (exemplu: opțiunea galerii cu subopțiunile galerie statică și galerie dinamică).
+Al doilea conține linkuri către secțiuni dintr-una din pagini. Nume opțiunii care deschide submeniul va fi numele acelei pagini.
+Cerințe SASS/CSS. Stilul pentru meniu se va implementa în SASS și va fi compilat în CSS având în vedere următoarele cerințe:
+
+Pentru realizarea selectorilor complecși, se va folosi imbricarea din SASS
+Pentru blocuri de cod similare, în care diferă doar valorile proprietăților, se vor folosi mixins și instrucțiuni repetitive: @for, @while.
+În cazul în care aveți cod css pentru un element, care depinde de al câtelea element e în cadrul containerului, se vor folosi variabile SASS pentru a genera valorile dependente de acest aspect
+De asemenea, se vot folosi variabile SASS sau CSS pentru orice valoare repetitiva.
+Puneți în variabile CSS (declarate în selectorul body) orice informații care ar putea depinde de tema cromatică a site-ului (pentru a o putea schimba ușor).
+Se va realiza meniul pentru ecran mare, cu următoarele cerințe:
+
+Când venim cu cursorul pe o opțiune din meniu, se va realiza tranziția indicată în videoclip:cu ajutorul unui element ::before sau ::after se va genera o bara cu un background în gradient cu 3 culori (în exemplu gradientul este: negru, alb, negru). Cand venim cu cursorul pe opțiune, bara coboara devenind din total transparentă, opacă, și se aliniază cu marginea de jos a butonului.
+Deschiderea submeniului se va face prin următoarea tranziție: se va scala de la 0 la înălțimea si lățimea totală (deci scalarea va fi pe verticală și orizontală) pornind din centrul boxului corespunzător submeniului.
+Când venim cu cursorul pe o opțiune din submeniu culoarea de background a opțiunii se va schimba.
+La redimensionarea paginii, pe ecran mediu, meniul își va schimba afișarea. Textul se va face mai mic, iar în locul butonului pentru pagina principală va apărea icon-ul cu o căsuță din font-awesome.
+
+Pentru ecran mic, se vor ascunde opțiunile afișându-se într-un hamburger menu. Vedeți exemplul de layout. În afișarea burger submeniul se va deschide ca mai jos, înlocuind opțiunea pentru prima pagină cu un icon-căsuță. La apariția submeniului, acesta va deveni vizibil cu ajutorul unui clip-path circular, care crește din colțul stânga-sus al submeniului până se afișează meniul complet. Tranzițiile pe opțiunile meniului se schimbă, dispărând bara glisantă, unicul comportament pe orice opțiune din meniu și submeniu fiind schimbarea culorii de background.
+
+
+Etapa 4
+(0.5)Trecerea site-ului pe node și crearea de fișiere EJS conform  cerințelor:
+În folderul proiectului dați comanda "npm init" și setatți numele, autorul, descrierea și cuvintele cheie pentru proiectul vostru. Instalați express și ejs.
+Se va crea în rădăcina proiectului un fișier index.js. În el se va crea un obiect server express care va asculta pe portul 8080. (sau alt port daca aveti deja folosit 8080)
+Să se afișeze calea folderului în care se găsește fișierul index.js (__dirname), calea fișierului (__filename) și folderul curent de lucru (process.cwd()). Sunt __dirname și process.cwd() același lucru întotdeauna?
+Se va folosi EJS pentru generarea (randarea) paginilor. Se va face un folder numit views în rădăcina proiectului. În el veți face un folder numit pagini (care conține paginile întregi) și altul numit fragmente (care conține părți de pagini (bucățele de cod html) ce pot fi refolosite pe mai multe pagini). Instalați în Visual Studio Code extensia EJS language support.
+Din index (care va fi redenumit index.ejs) se vor decupa headerul și footerul și se vor pune în ejs-uri separate. De asemenea se va decupa partea de head care conține codul care nu se schimbă în funcție de pagină (de exemplu, tagul meta cu encodingul sau autorul, includerea faviconului, fișierelor css generale (nu specifice paginii) a scripturilor generale etc). Se va folosi funcția include() în fișierele ejs, pentru a include toate aceste fragmente în pagini
+Se va realiza (dacă nu l-ați făcut deja) un folder special cu toate resursele site-ului (în stilul exemplului de la curs în care am pus toate fișierele statice, precum imagini, fișiere de stil, videoclipuri etc în folderul "resurse"). Numele folderului îl decideți voi, însă va trebui să fie structurat, de asemenea, în subfoldere în funcție de tipul și modul de utilizarea al fișierelor. Se va defini în program acest folder ca fiind static
+Se vor schimba căile fișierelor-resursă folosite în pagini, astfel încât să nu mai fie relative ci stil cerere către server (de exemplu, /resurse/stiluri/ceva.css în loc de, de exemplu, ../resurse/stiluri/ceva.css)
+Prima pagină (index) trebuie să se poată accesa atât cu localhost:8080 cât și cu localhost:8080/index,  localhost:8080/home. Realizați acest lucru folosind un vector în apelul app.get() care transmite pagina principală
+Veți declara un app.get() general pentru calea "/*", care tratează orice cerere de forma /pagina randând fișierul pagina.ejs (unde "pagina" e un nume generic și trebuie să funcționeze pentru orice string). Atenție, acest app.get() trebuie să fie ultimul în lista de app.get()-uri.  Dacă pagina cerută nu există, se va randa o pagină specială de eroare 404 (în modul descris mai jos). 
+Se va da ca argument în funcția render o funcție callback function(eroare, rezultatRandare) care, în cazul în care mesajul erorii începe cu "Failed to lookup view" va afișa pagina pentru eroarea 404 (vezi mai jos). în cazul în care e altă eroare va afișa pagina de eroare generică (vezi mai jos), iar dacă nu sunt erori va trimite către client rezultatul randării.
+Pentru randarea erorilor, veți folosi un fișier json, numit erori.json. Acesta va avea următoarele proprietăți:
+cale_baza: calea la care se găsesc imaginile corespunzătoare erorilor
+eroare_default: va fi un obiect JSON cu proprietățile: titlu (titlul paginii de eroare), text, imagine
+info_erori: un vector de obiecte. fiecare obiect descrie o eraore și are proprietățile: identificator (un cod numeric; pentru erorile http, precum 403, 404 e chiar codul http), status (boolean prin care indicăm dacă trebuie alt cod status decât 200 pentru răspuns), titlu (titlul erorii, pus in heading), text (descrierea erorii),  imagine(o imagine descriptiva pentru eroare; se va da calea relativa la cale_baza). Se vor adăuga în proiect în calea specificată în cale_baza imagini pentru erorile definite.
+Se va crea un template (eroare.ejs) cu ajutorul căruia să se afișeze erorile. Acesta va avea, preluate din locals, titlul, textul imaginea erorii.
+Se va crea o variabila globala numita obGlobal de tip obiect. Aceasta va avea o proprietate numita obErori, implicit cu valoare null. Se va crea o funcție, numita initErori(), fară parametri, care citește JSON-ul cu erorile și creează un obiect corespunător lui cu toate datele erorilor (pentru a le avea încărcate în memorie), acest obiect va fi salvat in proprietatea obErori a variabilei obGlobal. Pentru fiecare eroare, se va seta calea absoluta in proprietatea imagine (folosind proprietatea cale_baza)
+Se va crea o funcție de afișare a erorilor, numita afisareEroare() care va primi un obiect de tip Response, identificatorul, titlul, textul și imaginea erorii. În cazul în care există o eroare cu acel identificator, și titlul, textul și imaginea nu sunt precizate, se preiau datele încărcate din JSON pentru afișarea erorii. Dacă una dintre cele 3 proprietăți ale erorii e dată ca argument în funcție, are prioritate asupra datelor din JSON și se va afișa în pagină (de exemplu dacă titlul e dat ca argument, se afișează argumentul nu titlul citit din JSON). În cazul în care identificatorul nu se specifică, se afișează o pagină de eroare cu datele din eroare_default, însă tot cu posibilitatea de a afișa titlul, textul și imaginea din argumente, dacă sunt precizate.
+Veți mai face încă o pagină (cu puțin text sau imagini, ca să aibă conținut), de exemplu o pagină cu descrierea site-ului sau istoricul său, al firmei virtuale pentru care este făcut etc. Această pagină trebuie să poată fi accesată prin meniu (linkul să fie corect și să transmită o cerere de tip get). Nu faceti încă pagina de produse, findcă pe acelea le preluăm din baza de date. Nici paginile de înregistrare sau login, fiindca le tratăm separat.
+În zona din layout de date despre utilizator vom afișa ip-ul utilizatorului (prin program). Deocamdată, site-ul fiind local, veți vedea mereu ip-ul de localhost (adică ::1). Ip-ul real se va vedea când adăugați site-ul pe Internet.
+La o cerere către o cale din /resurse(de exemplu,localhost:8080/resurse/css/ ) fără fișier specificat (către folderul care ar conține fișierul) se va returna eroarea 403 Forbidden. Pagina de 403 va avea format similar cu cea de 404, folosind același template (eroare.ejs), dar textul și imaginea schimbate corespunzător, preluate din JSON 
+La cererea oricărui fișier cu extensia ejs se va transmite o eroare de tip 400 Bad Request. Pagina de 400 va folosi același template (eroare.ejs), dar textul și imaginea schimbate corespunzător, preluate din JSON
+Să se adauge un app.get() pentru "/favicon.ico". Uneori browserele cer favicon pentru diverse răspunsuri primite de la server (nu neapărat fisiere html, unde putem specifica faviconul prin taguri link). Pentru această cerere vom trimite un favicon cu metoda sendFile().
+Proiectul nostru va folosi niște foldere în care generează fișiere. Scrieți un vector cu numele folderelor de creat , numit vect_foldere, (vectorul va conține doar stringul "temp", deși pentru testare puteți pune și "temp1" pe care apoi îl ștergeți). Se va itera prin vector și se va testa dacă folderele există. Dacă un folder nu există, este creat. Peste tot unde aveți concatenare de căi folosiți path.join().
+
+Videoclipul va avea o imagine poster (atributul poster) relevantă pentru conținut. Videoclipul va avea și elementele de control afișate implicit. Videoclipul trebuie să se afișeze frumos pe ecran mic, deci va avea în css lățimea setată în procentaje, cât și o lățime minimă și maximă, ca să nu devină greu de urmărit pe ecrane mici sau foarte mari.
+Videoclipul va avea mai multe trackuri (minim 2), în limbi diferite (de exemplu română și engleză) cu atributele setate conform limbii. Trackul în limba română va fi cel default. Trackurile trebuie să aibă măcar 3 mesaje.
+Videoclipul va avea preîncărcate metainformațiile (preload).
+Videoclipul va avea minim 2 surse: același videoclip dar în formate diferite. Puteți converti online videoclipul în mai multe formate.
+Textul VTT asociat videoclipului va avea background de culoare albă transparentă (transparența culorii fiind de 0.3). Textul va fi scris cu o culoare închisă, conform schemei cromatice. La începutul videoclipului se va afișa un text din vtt (din secunda 0) care să conțină fie titlul videoclipului fie o scurtă informație introductivă despre videclip. Acest prim text va fi centrat pe videoclip atât pe orizontală cât și pe verticală
+
+
+Etapa 5
+
+Se va implementa o galerie statică. Galeria va fi vizibilă atât pe pagina principală cât și într-o pagină separată, dedicată ei (indicație: nu duplicați codul ci includeți un fragment care să conțină galeria), folosind grid și îndeplinind cerințele de mai jos:
+Detaliile pentru imaginile galeriei se vor lua dintr-un json cu următorul format:
+Obiectul principal al json-ului va avea o proprietate numită "cale_galerie" cu calea către folderul în care se află toate imaginile galeriei
+Obiectul principal al json-ului va avea și o proprietate imagini, care va fi de tip vector și va avea ca elemente obiecte în formatul urmator:
+selecteaza textul
+{
+"cale_relativa":"imagine.png",
+"nume":"Nume imagine",
+"descriere":"text descriere",
+"timp":"dimineata"
+}
+aceste detalii se vor transmite către fișierul EJS și vor fi folosite în template-ul de afișare a imaginilor.
+Serverul nu va transmite toate imaginile către pagină, ci doar cele care îndeplinesc un anumit criteriu. Imaginile care au valoarea "dimineata" pentru proprietatea "timp" se vor afișa între orele 5:00-12:00, cele cu valoarea "zi" între orele 12:00-20:00, cele cu valoarea "noapte" între orele 20:00-05:00
+Imaginile vor avea toate aceleași dimensiuni. Acest lucru se poate realiza folosind aproape orice utilitar grafic, ajutându-vă de funcționalitățile crop(decupare) și resize(redimensionare). Un tool online care e destul de ușore de folosit: https://picresize.com/en/edit. Imaginile vor fi editate astfel încât să aibă o dimensiune pentru ecran mare (de exemplu o lățime de 400-500px).
+Imaginile vor avea toate câte un nume sau descriere asociată (vizibilă) cu ajutorul tagurilor <figure> și <figcaption>. Imaginile vor fi indexate, iar indexul va fi scris la începutul descrierii din figcaption. Indexarea se va face cu litere mari (A, B, C, ...) (ideal folosind un counter css). Imaginile vor fi puse într-un tag picture, în care vor mai exista surse pentru ecran mediu și mic. Se vor genera imagini de dimensiune mai mică (dacă nu există deja) prin node (atunci când un client cere pagina). Indicație: pachetul sharp. Descrierea imaginilor se va adăuga în atributul title. În proprietatea alt a imaginilor se va adăuga valoarea proprietății alt din JSON, sau dacă aceasta nu există în formatul primit, se va adăuga numele imaginii.
+Galeria se va întinde pe toată lătimea paginii site-ului (în sensul că nu vor fi elemente în stânga sau dreapta, ci doar eventuale spațieri).
+Forma galeriei e descrisă mai jos (zonele cu negru reprezintă imagini iar cele cu alb, locuri libere în grid). Veți folosi un grid pentru a o afișa:
+Va avea minim 6 imagini afișate la un moment dat. Implementați în cod o condiție astfel încât, dacă sunt mai multe imagini care îndeplinesc creiteriul de afișare, numărul se va trunchia la un număr divizibil cu 3 (acest lucru trebuie implementat în program, nu obținut doar din date).
+Pe ecran mare imaginile se vor aseza într-un grid Nx3 (cu 3 coloane), fără spații libere.
+Pe ecran mediu, imaginile se vor aseza ca în imaginea de mai jos, folosind grid:
+[imagine schema galerie]
+Pe ecran mic, imaginile se vor aseza una sub alta, pe o coloană.
+Tranziție. Când se vine cu cursorul pe o imagine din galerie, se va realiza următoarea tranziție: aceasta se rotește rapid (alegeți un timp intre 0.3 - 1 secunde) cu 360 de grade, mărindu-se în același timp cu 50%. De asemenea, colțurile ei se vor rotunji (tot în tranziție)
+Imaginile folosite trebuie să aibă o licență corespunzătoare (să nu fie folosite ilegal). Puteți folosi imagini din "public domain" (domeniul public), licențiate CC0 (creative commons 0). Totuși pentru a învăța cum să inserați o atribuire de autor pentru o imagine folosită, minim una dintre ele va fi luată de pe un site care o oferă cu licență CC-BY (necesită atribuire). Datele pentru atribuire vor fi salvate în JSON.
+Observație: nu e nevoie să folosiți aceleași culori, fonturi, dimensiuni de text, stiluri de scris etc cu cele date în cerință. Importantă e forma galeriei și tranziția pe fiecare imagine.
+
+Observație: Pentru verificarea afișării imaginilor în funcție de timp veți schimba valoarea variabilei de tip dată care preia data și ora curentă, la o dată și o oră care să arate schimbarea de afișare.
+
+Puteți, de asemenea, să îmbogățiți galeria cu propriile voastre idei dar doar adăugând funcționalități, și nu modificând cerința de bază. Se va da un bonus pentru creativitate în cazul unor astfel de adăugări.
+
+(0.05) Se va face un repository local si se va pune proiectul pe Github. Se vor adauga în .gitignore node_modules  și folderul temp.
+(0.25) Compilare automata scss. Se vor realiza următoarele subpuncte:
+Pregătire cadru de lucru. Se vor defini în obiectul global două proprietăți folderScss și folderCss care conțin căile din folderul de resurse (depinzând de __dirname). Se va adăuga folderul backup la lista folderelor create automat de aplicație (așa cum e și folderul temp)
+Funcția de compilare a scss-urilor. Se va face o funcție compileazaScss(caleScss, caleCss){} care compileaza un fișier scss în fișier css.   Primii 2 parametrii reprezintă căile către fișierul scss (inputul funcției) și fisierul css (outputul funcției). Dacă avem căi absolute se iau fișierele de la cele două căi, iar dacă sunt relative se vor considera relative la folderScss, respectiv folderCss. compilarea se va face cu ajutorul pachetului sass. Dacă numele/calea fișierului css lipsește, se va salva în folderCss rezultatul compilarii folosind numele fișierului scss, dar cu extensia css
+Salvare în backup. În cadrul funcției compileazaScss, înainte de compilarea automată a scss-ului în fișierul css asociat, fișierul css vechi cu același nume va fi copiat în subcalea resurse/css a folderului backup. Orice folder din această subcale va fi creat dacă nu există deja. Se va afișa un mesaj de eroare în cazul eșecului copierii.
+Compilare inițială. La pornirea serverului, toate fisierele scss din folderScss trebuie să fie compilate în fișierele css cu același nume folosind funcția compileazaScss. Înainte de suprascrierea fișierului css, acesta va fi copiat în folderul backup (suprascriind un backup cu același nume - sau dacă vreți să păstrați backup-urile anterioare puteți integra în nume o informație cu privire la timpul creării.
+Compilare pe parcurs. Se va scrie cod (folosind fs.watch()) astfel încât să se urmărească modificările din folderul de fișiere scss. La modificarea/crearea unui fișier acesta va fi compilat automat în css. Fișierul css va acea același nume cu fișierul scss, având doar extensia scss schimbată în css. Înainte de suprascrierea fișierului css, acesta va fi copiat în folderul backup (suprascriind un backup cu același nume - sau dacă vreți să păstrați backup-urile anterioare puteți integra în nume o informație cu privire la timpul creării.
+(0.2) Customizare Bootstrap cu  schema cromatică aleasă de voi si cu dimensiuni de ecran diferite pentru ecrane medii și mari. Veți face un fișier numit custom.scss în care folositi fisierul scss al bootstrap, schimband valori pentru:
+culorile de background pentru minim 2 teme la alegere pe care aplicați tema cromatică schimbată (customizată de voi)
+culori de font (adică ale literelor. Precizare: nu neaparat pentru toata pagina, orice culoare de litere - de exemplu dintr-un buton)
+dimensiuni de ecran diferite pentru ecrane medii și mari
+dimensiunea razelor de border
+dimensiunea literelor  headingurilor (h1,h2 etc)
+familia de font implicită
+încă una sau mai mule variabile alese de voi
+Corectare Bootstrap. Atenție, este posibil ca integrarea bootstrap să afecteze aspectul site-ului deoarece pentru anumite elemente din pagină v-ați bazat pe aspectul implicit al acestora, prin urmare va fi nevoie să definiți reguli css astfel încât site-ul să revină la forma inițială. CSS-ul pentru bootstrap trebuie pus primul pentru a asigura suprascrierea proprietăților pentru selectorii-tag.
+Veți folosi unul sau mai multe  elemente de bootstrap care să ilustreze schimbările, dintre cele de mai jos:
+Customizarea se va face ca la laborator folosid sass, iar compilarea se va face automat la repornirea serverului folosind funcția compileazaScss!.

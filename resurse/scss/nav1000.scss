@@ -1,0 +1,38 @@
+// Medium screen navigation styles (max-width: 1000px)
+@media screen and (max-width: 1000px) {
+    nav {
+        .meniu {
+            > li {
+                .text-icon {
+                    display: none;
+                }
+                
+                .imag-icon {
+                    display: flex;
+                    min-width: 80px;
+                    
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+                
+                > a {
+                    display: none;
+                }
+                
+                // Show text for main page link
+                &:first-child {
+                    .text-icon {
+                        display: flex;
+                        min-width: 100px;
+                    }
+                }
+                
+                // Adjust submenu positioning
+                > ul {
+                    min-width: 180px;
+                }
+            }
+        }
+    }
+} 

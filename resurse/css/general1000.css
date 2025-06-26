@@ -1,0 +1,29 @@
+/* CSS pentru ecrane medii (max-width: 1000px) */
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 16px;
+    }
+    
+    body {
+        --spatiere-pagina: 50px;
+    }
+    
+    #grid-pagina {
+        grid-template-areas: 
+            "zona1 zona1"
+            "zona2 zona3"
+            "zona4 zona5"
+            "zona6 zona7"
+            "zona8 zona8";
+        grid-gap: 15px;
+    }
+    
+    #welcome {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+    
+    .placeholder {
+        padding: 1.5rem;
+    }
+} 

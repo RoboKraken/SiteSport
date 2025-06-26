@@ -1,7 +1,29 @@
 const express= require("express");
 const path= require("path");
 const fs = require("fs");
+const sharp = require("sharp");
+const sass = require("sass");
+const pg = require("pg");
 
+const Client=pg.Client;
+
+client=new Client({
+    database:"proiect",
+    user:"postgres",
+    password:"postgres",
+    host:"localhost",
+    port:5432
+})
+
+client.connect()
+/*client.query("select * from prajituri", function(err, rezultat ){
+    console.log(err)
+    console.log("Rezultat query:", rezultat)
+})
+client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err, rezultat ){
+    console.log(err)
+    console.log(rezultat)
+})*/
 
 app= express();
 
@@ -65,9 +87,14 @@ function afisareEroare(res, identificator, titlu, text, imagine){
 
 
 app.use("/resurse", express.static(path.join(__dirname,"resurse")))
+app.use("/node_modules", express.static(path.join(__dirname,"node_modules")))
+
+app.get("/favicon.ico", function(req, res){
+    res.sendFile(path.join(__dirname, "resurse/imagini/favicon/favicon.ico"))
+});
 
 app.get(["/","/index","/home"], function(req, res){
-    res.render("pagini/index");
+    res.render("pagini/index", {ip: req.ip});
 })
 
 app.get("/despre", function(req, res){
@@ -113,8 +140,10 @@ app.listen(8080);
 console.log("Serverul a pornit")
 
 
-app.get("/*",function(req,res,next){
-    res.render(
-
-    )
-})
+/*app.get("*", function(req, res) {
+    res.render("pagini/eroare", {
+        titlu: "404",
+        text: "Pagina nu a fost gasita!",
+        imagine: "/resurse/imagini/404.png"
+    });
+});*/

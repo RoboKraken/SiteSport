@@ -1,0 +1,101 @@
+// Small screen navigation styles (max-width: 700px) - Hamburger menu
+@media screen and (max-width: 700px) {
+    nav {
+        #hamburger {
+            display: block;
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            z-index: 1002;
+            
+            img {
+                height: 1.5rem;
+                width: auto;
+            }
+        }
+        
+        .meniu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--culoare-primara);
+            flex-direction: column;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            
+            > li {
+                height: auto;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                
+                .text-icon, .imag-icon {
+                    height: auto;
+                    min-width: auto;
+                    width: 100%;
+                    justify-content: flex-start;
+                    padding: 1rem;
+                }
+                
+                .text-icon {
+                    display: flex;
+                }
+                
+                .imag-icon {
+                    display: none;
+                }
+                
+                > a {
+                    display: block;
+                    height: auto;
+                    min-width: auto;
+                    width: 100%;
+                    justify-content: flex-start;
+                    padding: 1rem;
+                }
+                
+                // Remove sliding bar effect on mobile
+                .text-icon::before,
+                > a::before {
+                    display: none;
+                }
+                
+                // Submenu for mobile
+                > ul {
+                    position: static;
+                    transform: none;
+                    background-color: rgba(0,0,0,0.1);
+                    box-shadow: none;
+                    clip-path: circle(0% at 0% 0%);
+                    transition: clip-path 0.3s ease;
+                    width: 100%;
+                    min-width: auto;
+                    
+                    li {
+                        border-bottom: 1px solid rgba(255,255,255,0.05);
+                        
+                        a {
+                            padding: 0.75rem 2rem;
+                            color: white;
+                            
+                            &:hover {
+                                background-color: var(--culoare-accent);
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                
+                // Show submenu when parent is active
+                &:hover > ul {
+                    clip-path: circle(150% at 0% 0%);
+                }
+            }
+        }
+        
+        // Show menu when checkbox is checked
+        #ch-menu:checked ~ .meniu {
+            display: flex;
+        }
+    }
+} 

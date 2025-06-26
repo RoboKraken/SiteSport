@@ -1,90 +1,400 @@
-html{
-    font-size:18px;
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
 }
-body{
-    --spatiere-pagina:80px;
-    --culoare-background: #2e78b3;
-    --culoare-deschisa: #90bde6;
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
 
+html {
+    font-size: 18px;
+    transition: font-size 0.3s ease;
+}
+
+body {
+    --spatiere-pagina: 80px;
+    /* Schema cromatica completa - 5 culori */
+    --culoare-primara: #2e78b3;      /* Albastru sport - culoarea principala */
+    --culoare-secundara: #90bde6;    /* Albastru deschis - pentru accente */
+    --culoare-accent: #ff6b35;       /* Portocaliu - pentru highlight si call-to-action */
+    --culoare-text: #2c3e50;         /* Gri inchis - pentru text */
+    --culoare-background: #f8f9fa;   /* Gri foarte deschis - pentru background */
+    
+    /* Variabile pentru utilizare */
+    --culoare-background: var(--culoare-background);
+    --culoare-deschisa: var(--culoare-secundara);
+    --culoare-text: var(--culoare-text);
+    --culoare-highlight: var(--culoare-accent);
+    --culoare-border: var(--culoare-primara);
+    
+    background-color: var(--culoare-background);
+    color: var(--culoare-text);
+    font-family: 'Lora', serif;
 }
 
 header {
-    background-color: lightblue;
+    background-color: var(--culoare-primara);
+    color: white;
     border-radius: 3px;
-    box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
 }
+
 footer {
-    background-color: lightgreen;
+    background-color: var(--culoare-primara);
+    color: white;
     border-radius: 3px;
-    box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
 }
 
-#grid-pagina{
-    display: grid;
-    grid-gap: 15px;
-    grid-template-areas: "welcome  welcome  welcome"
-                         "promotii promotii produse"
-                         "promotii promotii  produse"
-                         "info     orar     orar"
-                         "info     orar     orar"
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
 
+#grid-pagina {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 3fr 2fr 2fr auto;
+    grid-template-areas:
+        "zona1 zona1 zona1"
+        "zona3 zona2 zona4"
+        "zona5 zona2 zona4"
+        "zona5 zona6 zona7"
+        "zona8 zona8 zona8";
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Zona 1 - Prezentare (Poster) */
+#welcome {
+    grid-area: zona1;
+    background: linear-gradient(135deg, var(--culoare-primara), var(--culoare-secundara));
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+/* Zona 2 - Tabel */
+#orar {
+    grid-area: zona2;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Zona 3 - Calendar evenimente */
+#calendar {
+    grid-area: zona3;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Zona 4 - Anunturi */
+#anunturi {
+    grid-area: zona4;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Zona 5 - Utilizatori online */
+#utilizatori-online {
+    grid-area: zona5;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Zona 6 - Date utilizator si statistici */
+#statistici {
+    grid-area: zona6;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Zona 7 - Date site si server */
+#info-site {
+    grid-area: zona7;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Zona 8 - Diverse alte tipuri de continut */
+#diverse {
+    grid-area: zona8;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 #tab-orar {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-size: 1.1rem;
 }
 
 #tab-orar td, #tab-orar th {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid var(--culoare-border);
+    padding: 12px;
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 #tab-orar th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: left;
-    background-color: var(--culoare-deschisa);
+    background-color: var(--culoare-primara);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#tab-orar tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tab-orar tr:hover {
+    background-color: var(--culoare-secundara);
     color: white;
 }
 
+/* Stiluri pentru placeholders */
+.placeholder {
+    background-color: var(--culoare-background);
+    border: 2px dashed var(--culoare-border);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: left;
+    color: var(--culoare-text);
+    font-style: normal;
+}
+
+.placeholder h3 {
+    color: var(--culoare-primara);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--culoare-secundara);
+    padding-bottom: 0.5rem;
+}
+
+.placeholder h4 {
+    color: var(--culoare-accent);
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.placeholder ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.placeholder li {
+    margin: 0.3rem 0;
+    line-height: 1.4;
+}
+
+.placeholder .anunt {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    border-left: 4px solid var(--culoare-accent);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.placeholder .anunt h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder a {
+    color: var(--culoare-accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.placeholder a:hover {
+    text-decoration: underline;
+}
+
+.placeholder em {
+    color: var(--culoare-text);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Tabbed iframe styles */
+.iframe-container {
+    display: flex;
+    gap: 1rem;
+    height: 450px;
+    margin-top: 1rem;
+}
+
+.iframe-wrapper {
+    flex: 1;
+    border: 2px solid var(--culoare-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#wiki-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+.tab-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 200px;
+}
+
+.tab-btn {
+    padding: 0.75rem 1rem;
+    background-color: var(--culoare-background);
+    border: 2px solid var(--culoare-border);
+    border-radius: 6px;
+    color: var(--culoare-text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-btn:hover {
+    background-color: var(--culoare-secundara);
+    color: white;
+    transform: translateX(5px);
+}
+
+.tab-btn.active {
+    background-color: var(--culoare-primara);
+    color: white;
+    border-color: var(--culoare-primara);
+    box-shadow: 0 2px 8px rgba(46, 120, 179, 0.3);
+}
+
+.tab-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 120, 179, 0.2);
+}
+
+/* Responsive Design */
 @media screen and (max-width:1200px) {
     html{
-        font-size:14px;
+        font-size:16px;
     }
-
     body{
-        --spatiere-pagina:50px;
+        --spatiere-pagina:60px;
     }
-
     #grid-pagina{
-        grid-template-rows: 1fr 1fr; /* repeat(2,1fr) */
-        grid-template-areas: "welcome  welcome"
-                             "promotii promotii"
-                             "anunturi anunturi"
-                             "fig1     produse "
-                             "fig2     produse "
-                             "fig3     produse "
-                             "orar     orar    "
-                             "index-intrebari index-intrebari";
-
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 2fr 2fr 2fr 2fr auto;
+        grid-template-areas:
+            "zona1 zona1"
+            "zona2 zona3"
+            "zona4 zona5"
+            "zona6 zona7"
+            "zona8 zona8";
     }
-
+    
+    /* Responsive iframe container */
+    .iframe-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .tab-buttons {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .tab-btn {
+        min-width: 120px;
+        flex-shrink: 0;
+    }
 }
 
 @media screen and (max-width:800px) {
     #grid-pagina{
-        display: block;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "zona1"
+            "zona2"
+            "zona3"
+            "zona4"
+            "zona5"
+            "zona6"
+            "zona7"
+            "zona8";
     }
-
     html{
-        font-size:10px;
+        font-size:14px;
     }
-
     body{
-        --spatiere-pagina:20px;
+        --spatiere-pagina:40px;
     }
-
+    main {
+        padding: 0.5rem;
+    }
+    #welcome, #orar, #calendar, #anunturi, #utilizatori-online, 
+    #statistici, #info-site, #diverse {
+        padding: 1rem;
+    }
+    
+    /* Mobile iframe styles */
+    .iframe-container {
+        gap: 0.5rem;
+    }
+    
+    .tab-buttons {
+        gap: 0.25rem;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
 }

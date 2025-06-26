@@ -1,0 +1,252 @@
+// Variables for navigation
+$nav-height: 3rem;
+$nav-bg: var(--culoare-primara);
+$nav-text: white;
+$submenu-bg: var(--culoare-secundara);
+$submenu-text: var(--culoare-text);
+$transition-duration: 0.3s;
+
+// Mixin for common button styles
+@mixin nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: $nav-text;
+    transition: all $transition-duration ease;
+    position: relative;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: var(--culoare-accent);
+    }
+}
+
+// Mixin for sliding bar effect
+@mixin sliding-bar {
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, transparent, white, transparent);
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all $transition-duration ease;
+    }
+    
+    &:hover::before {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// Main navigation container
+nav {
+    background-color: $nav-bg;
+    height: $nav-height;
+    position: relative;
+    z-index: 1000;
+    
+    // Hamburger menu (hidden on desktop)
+    #hamburger {
+        display: none;
+        cursor: pointer;
+        
+        img {
+            height: 2rem;
+            width: auto;
+        }
+    }
+    
+    #ch-menu {
+        display: none;
+    }
+    
+    // Main menu list
+    .meniu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        
+        // Menu items
+        > li {
+            position: relative;
+            height: 100%;
+            
+            // Text and icon containers
+            .text-icon, .imag-icon {
+                @include nav-button;
+                height: 100%;
+                min-width: 120px;
+            }
+            
+            .text-icon {
+                @include sliding-bar;
+            }
+            
+            .imag-icon {
+                display: none;
+                
+                span {
+                    font-size: 1.2rem;
+                }
+            }
+            
+            // Direct links
+            > a {
+                @include nav-button;
+                @include sliding-bar;
+                height: 100%;
+                min-width: 120px;
+            }
+            
+            // Submenus
+            > ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: $submenu-bg;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                min-width: 200px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                transform: scale(0);
+                transform-origin: center top;
+                transition: transform $transition-duration ease;
+                z-index: 1001;
+                
+                li {
+                    a {
+                        display: block;
+                        padding: 0.75rem 1rem;
+                        color: $submenu-text;
+                        text-decoration: none;
+                        transition: background-color $transition-duration ease;
+                        
+                        &:hover {
+                            background-color: var(--culoare-accent);
+                            color: white;
+                        }
+                    }
+                }
+            }
+            
+            // Show submenu on hover
+            &:hover > ul {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+// Responsive design for medium screens
+@media screen and (max-width: 1000px) {
+    nav {
+        .meniu {
+            > li {
+                .text-icon {
+                    display: none;
+                }
+                
+                .imag-icon {
+                    display: flex;
+                }
+                
+                > a {
+                    display: none;
+                }
+                
+                // Show text for main page link
+                &:first-child {
+                    .text-icon {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive design for small screens (hamburger menu)
+@media screen and (max-width: 700px) {
+    nav {
+        #hamburger {
+            display: block;
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            z-index: 1002;
+        }
+        
+        .meniu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: $nav-bg;
+            flex-direction: column;
+            height: auto;
+            
+            > li {
+                height: auto;
+                
+                .text-icon, .imag-icon {
+                    height: auto;
+                    min-width: auto;
+                    width: 100%;
+                    justify-content: flex-start;
+                    padding: 1rem;
+                }
+                
+                .text-icon {
+                    display: flex;
+                }
+                
+                .imag-icon {
+                    display: none;
+                }
+                
+                > a {
+                    display: block;
+                    height: auto;
+                    min-width: auto;
+                    width: 100%;
+                    justify-content: flex-start;
+                    padding: 1rem;
+                }
+                
+                // Submenu for mobile
+                > ul {
+                    position: static;
+                    transform: none;
+                    background-color: rgba(0,0,0,0.1);
+                    box-shadow: none;
+                    clip-path: circle(0% at 0% 0%);
+                    transition: clip-path $transition-duration ease;
+                    
+                    li a {
+                        padding-left: 2rem;
+                    }
+                }
+                
+                // Show submenu when parent is active
+                &:hover > ul {
+                    clip-path: circle(150% at 0% 0%);
+                }
+            }
+        }
+        
+        // Show menu when checkbox is checked
+        #ch-menu:checked ~ .meniu {
+            display: flex;
+        }
+    }
+} 

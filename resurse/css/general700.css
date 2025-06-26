@@ -1,0 +1,37 @@
+/* CSS pentru ecrane mici (max-width: 700px) */
+@media screen and (max-width: 700px) {
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        --spatiere-pagina: 20px;
+    }
+    
+    #grid-pagina {
+        display: block;
+        grid-gap: 10px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+    
+    #welcome, #orar, #calendar, #anunturi, #utilizatori-online, 
+    #statistici, #info-site, #diverse, #promotii, #produse, #info {
+        margin-bottom: 15px;
+    }
+    
+    #welcome {
+        min-height: 200px;
+        padding: 1rem;
+    }
+    
+    .placeholder {
+        padding: 1rem;
+    }
+    
+    header, footer {
+        padding: 0.5rem;
+    }
+} 

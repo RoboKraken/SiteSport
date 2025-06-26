@@ -1,0 +1,22 @@
+@media screen and (max-width: 1000px) {
+  nav .meniu > li .text-icon {
+    display: none;
+  }
+  nav .meniu > li .imag-icon {
+    display: flex;
+    min-width: 80px;
+  }
+  nav .meniu > li .imag-icon span {
+    font-size: 1rem;
+  }
+  nav .meniu > li > a {
+    display: none;
+  }
+  nav .meniu > li:first-child .text-icon {
+    display: flex;
+    min-width: 100px;
+  }
+  nav .meniu > li > ul {
+    min-width: 180px;
+  }
+}
