@@ -185,7 +185,9 @@ main {
     background-color: #f2f2f2;
 }
 
-#tab-orar tr:hover {
+
+#tab-orar tr:hover td{
+    font-size:1.5rem;
     background-color: var(--culoare-secundara);
     color: white;
 }
@@ -405,3 +407,41 @@ main {
     padding-right: 2vw;
   }
 }
+
+.galerie-item picture, .galerie-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  height: auto;
+  min-height: 180px;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+  transition: border-radius 0.5s;
+  background: #f8f9fa;
+}
+
+/* --- Galerie Grid Styles for Large Screens --- */
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  margin: 2rem 0;
+}
+.galerie-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55), border-radius 0.5s, box-shadow 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+/*
+  If there are fewer than 6 images, repeat the first images to fill the grid.
+  For example, with 4 images: 1,2,3,1
+  This is handled in the EJS/JS, but the grid always has 3 columns.
+*/

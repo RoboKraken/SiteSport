@@ -1,0 +1,32 @@
+<section class="galerie-grid">
+  <% if (imagini && imagini.length) { 
+    let imgs = imagini;
+    let n = imgs.length;
+    let toShow = n;
+    if (n < 6) {
+      toShow = 3;
+      if (n === 4) toShow = 4;
+      if (n === 5) toShow = 6;
+    } else {
+      toShow = n - (n % 3);
+    }
+    for(let i = 0; i < toShow; i++) { 
+      let img = imgs[i % n];
+      let idx = String.fromCharCode(65 + (i % n));
+  %>
+    <figure class="galerie-item">
+      <picture>
+        <source srcset="/<%= cale_galerie %>/<%= img.cale_relativa.replace(/\.[^.]+$/, ' mic.png') %>" media="(max-width:700px)">
+        <source srcset="/<%= cale_galerie %>/<%= img.cale_relativa.replace(/\.[^.]+$/, ' mediu.png') %>" media="(max-width:1200px)">
+        <img src="/<%= cale_galerie %>/<%= img.cale_relativa %>" alt="<%= img.alt || img.nume %>" title="<%= img.descriere %>" loading="lazy">
+      </picture>
+      <figcaption>
+        <strong><%= idx %>.</strong> <%= img.nume %> - <%= img.descriere %>
+        <% if(img.atributie) { %><br><span class="atributie"><%= img.atributie %></span><% } %>
+      </figcaption>
+    </figure>
+  <% } 
+  } else { %>
+    <p>Nu există imagini de afișat.</p>
+  <% } %>
+</section> 

@@ -6,7 +6,6 @@ $submenu-bg: var(--culoare-secundara);
 $submenu-text: var(--culoare-text);
 $transition-duration: 0.3s;
 
-// Mixin for common button styles
 @mixin nav-button {
     display: flex;
     align-items: center;
@@ -23,7 +22,6 @@ $transition-duration: 0.3s;
     }
 }
 
-// Mixin for sliding bar effect
 @mixin sliding-bar {
     &::before {
         content: '';
@@ -44,14 +42,12 @@ $transition-duration: 0.3s;
     }
 }
 
-// Main navigation container
 nav {
     background-color: $nav-bg;
     height: $nav-height;
     position: relative;
     z-index: 1000;
     
-    // Hamburger menu (hidden on desktop)
     #hamburger {
         display: none;
         cursor: pointer;
@@ -66,7 +62,6 @@ nav {
         display: none;
     }
     
-    // Main menu list
     .meniu {
         display: flex;
         list-style: none;
@@ -74,12 +69,10 @@ nav {
         padding: 0;
         height: 100%;
         
-        // Menu items
         > li {
             position: relative;
             height: 100%;
             
-            // Text and icon containers
             .text-icon, .imag-icon {
                 @include nav-button;
                 height: 100%;
@@ -98,7 +91,6 @@ nav {
                 }
             }
             
-            // Direct links
             > a {
                 @include nav-button;
                 @include sliding-bar;
@@ -106,7 +98,6 @@ nav {
                 min-width: 120px;
             }
             
-            // Submenus
             > ul {
                 position: absolute;
                 top: 100%;
@@ -138,7 +129,6 @@ nav {
                 }
             }
             
-            // Show submenu on hover
             &:hover > ul {
                 transform: scale(1);
             }
@@ -146,7 +136,6 @@ nav {
     }
 }
 
-// Responsive design for medium screens
 @media screen and (max-width: 1000px) {
     nav {
         .meniu {
@@ -163,7 +152,6 @@ nav {
                     display: none;
                 }
                 
-                // Show text for main page link
                 &:first-child {
                     .text-icon {
                         display: flex;
@@ -174,7 +162,6 @@ nav {
     }
 }
 
-// Responsive design for small screens (hamburger menu)
 @media screen and (max-width: 700px) {
     nav {
         #hamburger {
@@ -223,7 +210,6 @@ nav {
                     padding: 1rem;
                 }
                 
-                // Submenu for mobile
                 > ul {
                     position: static;
                     transform: none;
@@ -237,14 +223,12 @@ nav {
                     }
                 }
                 
-                // Show submenu when parent is active
                 &:hover > ul {
                     clip-path: circle(150% at 0% 0%);
                 }
             }
         }
         
-        // Show menu when checkbox is checked
         #ch-menu:checked ~ .meniu {
             display: flex;
         }

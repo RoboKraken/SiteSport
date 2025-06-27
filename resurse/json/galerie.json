@@ -2,36 +2,52 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"backpack.jpg",
-			"descriere":"Backpack",
-			"luni":["martie","februarie","noiembrie","aprilie", "decembrie"]
+			"cale_relativa": "backpack.jpg",
+			"nume": "Backpack",
+			"descriere": "Rucsac pentru drumeții",
+			"timp": "zi",
+			"alt": "Rucsac albastru în pădure",
+			"atributie": "Foto: Pixabay, CC0"
 		},
 		{
-			"fisier":"bocanci.jpg",
-			"descriere":"Bocanci de hike",
-			"luni":["ianuarie","februarie","iunie"]
-			
+			"cale_relativa": "bocanci.jpg",
+			"nume": "Bocanci de hike",
+			"descriere": "Bocanci de drumeție rezistenți",
+			"timp": "zi",
+			"alt": "Pereche de bocanci de hike",
+			"atributie": "Foto: Pixabay, CC0"
 		},
 		{
-			"fisier":"cort.jpg",
-			"descriere":"Cort de camping",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"cale_relativa": "cort.jpg",
+			"nume": "Cort de camping",
+			"descriere": "Cort sub cerul înstelat",
+			"timp": "zi",
+			"alt": "Cort luminat noaptea",
+			"atributie": "Foto: Pixabay, CC0"
 		},
 		{
-			"fisier":"frontala.jpg",
-			"descriere":"Frontala",
-			
-			"luni":["noiembrie","aprilie", "decembrie"]
+			"cale_relativa": "frontala.jpg",
+			"nume": "Frontala",
+			"descriere": "Lanternă frontală pentru camping",
+			"timp": "zi",
+			"alt": "Lanternă frontală portocalie",
+			"atributie": "Foto: Pixabay, CC0"
 		},
 		{
-			"fisier":"schiuri.jpg",
-			"descriere":"Prăjitură cu ciocolată",
-			
-			"luni":["noiembrie","aprilie", "decembrie"]
+			"cale_relativa": "schiuri.jpg",
+			"nume": "Schiuri",
+			"descriere": "Persoană la schi pe pârtie",
+			"timp": "noapte",
+			"alt": "Schiuri pe zăpadă",
+			"atributie": "Foto: Pixabay, CC0"
 		},
 		{
-			"fisier":"snowboard.jpg",
-			"descriere":"Tartă cu afine"
+			"cale_relativa": "snowboard.jpg",
+			"nume": "Snowboard",
+			"descriere": "Snowboarder în aer",
+			"timp": "dimineata",
+			"alt": "Snowboarder sărind pe fundal albastru",
+			"atributie": "Foto: Pixabay, CC0"
 		}
 	]
 }

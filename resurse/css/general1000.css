@@ -26,4 +26,33 @@
     .placeholder {
         padding: 1.5rem;
     }
+    
+    .galerie-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(150px, auto));
+        gap: 1.5rem;
+        grid-template-areas:
+            "a a a"
+            ". b ."
+            "c c c"
+            ". d ."
+            "e e e"
+            ". f .";
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        margin: 2rem 0;
+    }
+    .galerie-item {
+        width: 100%;
+        max-width: 320px;
+        justify-self: center;
+    }
+    .galerie-item:nth-child(6n+1) { grid-area: a; }
+    .galerie-item:nth-child(6n+2) { grid-area: b; }
+    .galerie-item:nth-child(6n+3) { grid-area: c; }
+    .galerie-item:nth-child(6n+4) { grid-area: d; }
+    .galerie-item:nth-child(6n+5) { grid-area: e; }
+    .galerie-item:nth-child(6n+6) { grid-area: f; }
 } 

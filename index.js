@@ -94,12 +94,76 @@ app.get("/favicon.ico", function(req, res){
 });
 
 app.get(["/","/index","/home"], function(req, res){
-    res.render("pagini/index", {ip: req.ip});
+    let galerie = JSON.parse(fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json")));
+    let cale_galerie = galerie.cale_galerie;
+    let imagini = galerie.imagini;
+    let now = new Date();
+    let hour = now.getHours();
+    let timp;
+    
+    if (hour >= 5 && hour < 12) {
+        timp = "dimineata";
+    } else if (hour >= 12 && hour < 20) {
+        timp = "zi";
+    } else {
+        timp = "noapte"; 
+    }
+    
+    console.log(`Current hour: ${hour}, Selected time: ${timp}`);
+    
+    let imagini_filtrate = imagini.filter(img => img.timp === timp);
+    console.log(`Total images: ${imagini.length}, Filtered images: ${imagini_filtrate.length}`);
+    
+    let n = imagini_filtrate.length - (imagini_filtrate.length % 3);
+    if (n > 0) imagini_filtrate = imagini_filtrate.slice(0, n);
+    
+    res.render("pagini/index", {
+        ip: req.ip,
+        imagini: imagini_filtrate,
+        cale_galerie: cale_galerie
+    });
 })
 
-app.get("/despre", function(req, res){
-    res.render("pagini/despre");
+app.get("/galerie", function(req, res){
+    try {
+        let galerie = JSON.parse(fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json")));
+        let cale_galerie = galerie.cale_galerie;
+        let imagini = galerie.imagini;
+        let now = new Date();
+        let hour = now.getHours();
+        let timp;
+        
+        
+        if (hour >= 5 && hour < 12) {
+            timp = "dimineata";
+        } else if (hour >= 12 && hour < 20) {
+            timp = "zi";
+        } else {
+            timp = "noapte"; 
+        }
+        
+        console.log(`Gallery - Current hour: ${hour}, Selected time: ${timp}`);
+        
+        let imagini_filtrate = imagini.filter(img => img.timp === timp);
+        console.log(`Gallery - Total images: ${imagini.length}, Filtered images: ${imagini_filtrate.length}`);
+        
+        
+        //let n = imagini_filtrate.length - (imagini_filtrate.length % 3);
+        //if (n > 0) imagini_filtrate = imagini_filtrate.slice(0, n);
+        
+        res.render("pagini/galerie", {
+            imagini: imagini_filtrate,
+            cale_galerie: cale_galerie
+        });
+    } catch (error) {
+        console.error("Error loading gallery:", error);
+        afisareEroare(res, 500);
+    }
 })
+
+/*app.get("/despre", function(req, res){
+    res.render("pagini/despre");
+})*/
 
 app.get("/index/a", function(req, res){
     res.render("pagini/index");

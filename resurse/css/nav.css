@@ -199,4 +199,71 @@ nav .meniu > li:hover > ul {
   nav #ch-menu:checked ~ .meniu {
     display: flex;
   }
+  .nav-btn {
+    position: relative;
+    overflow: visible;
+  }
+  .nav-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background: linear-gradient(90deg, black, white, black);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nav-btn:hover::after,
+  .nav-btn:focus::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-btn:hover .submenu,
+  .nav-btn:focus .submenu {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
+
+@media (min-width: 1000px) {
+  .nav-btn {
+    position: relative;
+    overflow: visible;
+    transition: background 0.3s;
+  }
+  .nav-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background: linear-gradient(90deg, black, white, black);
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.3s, top 0.3s;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nav-btn:hover::after,
+  .nav-btn:focus::after {
+    opacity: 1;
+    top: calc(100% - 4px);
+  }
+  .nav-btn:hover,
+  .nav-btn:focus {
+    background-color: #3a5ca4 !important;
+  }
+  .nav-btn:hover .text-icon,
+  .nav-btn:focus .text-icon {
+    background-color: #3a5ca4 !important;
+    color: white !important;
+  }
+}
+
