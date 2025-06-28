@@ -1,15 +1,63 @@
 @media screen and (max-width: 700px) {
-  nav #hamburger {
-    display: block;
+  nav .hamburger-container {
     position: absolute;
     top: 0.5rem;
     right: 1rem;
+    display: inline-block;
+    cursor: pointer;
     z-index: 1002;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
   }
+
+  nav .hamburger-container:hover {
+    background-color: rgba(46, 120, 179, 0.1);
+  }
+
+  nav .hamburger-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--culoare-primara);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s ease-out;
+    z-index: -1;
+    box-shadow: 0 2px 8px rgba(46, 120, 179, 0.3);
+  }
+
+  nav .hamburger-container:hover::before {
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  nav #hamburger {
+    display: block;
+    position: relative;
+    z-index: 1002;
+    transition: transform 0.2s ease;
+  }
+
+  nav .hamburger-container:hover #hamburger {
+    transform: scale(1.1);
+  }
+
   nav #hamburger img {
     height: 1.5rem;
     width: auto;
+    filter: brightness(1);
+    transition: filter 0.2s ease;
   }
+
+  nav .hamburger-container:hover #hamburger img {
+    filter: brightness(1.2);
+  }
+
   nav .meniu {
     display: none;
     position: absolute;
@@ -20,11 +68,25 @@
     flex-direction: column;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
+
+  nav .hamburger-container:hover ~ .meniu,
+  nav .meniu:hover {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   nav .meniu > li {
     height: auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
+
   nav .meniu > li .text-icon, nav .meniu > li .imag-icon {
     height: auto;
     min-width: auto;
@@ -74,7 +136,5 @@
   nav .meniu > li:hover > ul {
     clip-path: circle(150% at 0% 0%);
   }
-  nav #ch-menu:checked ~ .meniu {
-    display: flex;
-  }
+  
 }

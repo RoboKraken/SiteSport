@@ -34,4 +34,11 @@
     header, footer {
         padding: 0.5rem;
     }
-} 
+
+
+    .galerie-grid {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
+    }
+}

@@ -5,7 +5,7 @@
 			"cale_relativa": "backpack.jpg",
 			"nume": "Backpack",
 			"descriere": "Rucsac pentru drumeții",
-			"timp": "zi",
+			"timp": "dimineata",
 			"alt": "Rucsac albastru în pădure",
 			"atributie": "Foto: Pixabay, CC0"
 		},
@@ -13,7 +13,7 @@
 			"cale_relativa": "bocanci.jpg",
 			"nume": "Bocanci de hike",
 			"descriere": "Bocanci de drumeție rezistenți",
-			"timp": "zi",
+			"timp": "dimineata",
 			"alt": "Pereche de bocanci de hike",
 			"atributie": "Foto: Pixabay, CC0"
 		},
@@ -21,7 +21,7 @@
 			"cale_relativa": "cort.jpg",
 			"nume": "Cort de camping",
 			"descriere": "Cort sub cerul înstelat",
-			"timp": "zi",
+			"timp": "dimineata",
 			"alt": "Cort luminat noaptea",
 			"atributie": "Foto: Pixabay, CC0"
 		},
@@ -29,7 +29,7 @@
 			"cale_relativa": "frontala.jpg",
 			"nume": "Frontala",
 			"descriere": "Lanternă frontală pentru camping",
-			"timp": "zi",
+			"timp": "dimineata",
 			"alt": "Lanternă frontală portocalie",
 			"atributie": "Foto: Pixabay, CC0"
 		},
@@ -37,7 +37,7 @@
 			"cale_relativa": "schiuri.jpg",
 			"nume": "Schiuri",
 			"descriere": "Persoană la schi pe pârtie",
-			"timp": "noapte",
+			"timp": "dimineata",
 			"alt": "Schiuri pe zăpadă",
 			"atributie": "Foto: Pixabay, CC0"
 		},

@@ -85,47 +85,41 @@
             </table>
         </section>
         
-        <!-- Zona 3 - Calendar evenimente -->
         <section id="calendar" class="placeholder">
             <h3>Calendar Evenimente</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
         
-        <!-- Zona 4 - Anunturi -->
         <section id="anunturi" class="placeholder">
             <h3>Anunțuri</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
         
-        <!-- Zona 5 - Utilizatori online -->
         <section id="utilizatori-online" class="placeholder">
             <h3>Utilizatori Online</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
         
-        <!-- Zona 6 - Date utilizator si statistici -->
         <section id="statistici" class="placeholder">
             <h3>Statistici Utilizator</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
         
-        <!-- Zona 7 - Date site si server -->
         <section id="info-site" class="placeholder">
             <h3>Informații Site și Server</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
         
-        <!-- Zona 8 - Diverse alte tipuri de continut -->
         <section id="diverse">
-            <h3>Informații Wiki - Sport</h3>
+            <h3>Informații Wiki</h3>
             <div class="iframe-container">
                 <div class="iframe-wrapper">
-                    <iframe id="wiki-iframe" src="https://ro.wikipedia.org/wiki/Sport" width="100%" height="400" title="Sport Wikipedia"></iframe>
+                    <iframe name="iframe" id="wiki-iframe" src="https://ro.wikipedia.org/wiki/Sport" width="100%" height="400" title="Sport Wikipedia"></iframe>
                 </div>
                 <div class="tab-buttons">
                     <button class="tab-btn active" onclick="changeTab('https://ro.wikipedia.org/wiki/Sport', this)">Sport General</button>
@@ -137,57 +131,32 @@
                     <button class="tab-btn" onclick="changeTab('https://ro.wikipedia.org/wiki/Atletism', this)">Atletism</button>
                 </div>
             </div>
-        </section>
-        <!-<%- include('../fragmente/galerie', { imagini: imagini, cale_galerie: cale_galerie }) %> -->
-        <!--
-        <section id="promotii">
-            <h2>Promoții</h2>
-            <article>
-                <h3 class="titlu">Super ofertă de weekend</h3>
-                <p><b>SuperSport</b> oferă <b>reduceri de <ins>25%</ins></b> pentru toate produsele cumpărate în intervalul 10-14.</p>
-                <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediile <abbr title="SuperSport">SSp</abbr>.</p>
-                <p>în cazul în care cumpărați mai mult de trei <b>articole</b> primiți si un card de fidelitate!</p>
-            </article>
-            <article>
-                <h3>Ofertă pachet</h3>
-                <p>SuperSport oferă pachete cuprinzând:</p>
-                <ol>
-                    <li><i lang="en">Papuci de hike</i></li>
-                    <li>Pantaloni de hiking</li>
-                    <li>Lanterna </li>
-                    <li><b>Cumparand pachetul beneficiati de o reducere de 30%!</b></li>
-                </ol>
-            </article>
+            
+            <h4>locatiile noastre:</h4>
+            <img src="/resurse/imagini/Harta.PNG" usemap="#image-map" style="display: block; margin: 0 auto; max-width: 100%; width: auto; height: auto;">
+            <map name="image-map">
+                <area target="iframe" alt="Brasov" title="Brasov" href="https://ro.wikipedia.org/wiki/Bra%C8%99ov" coords="621,461,545,393" shape="rect">
+                <area target="iframe" alt="Timisoara" title="Timisoara" href="https://ro.wikipedia.org/wiki/Timi%C8%99oara" coords="119,411,45" shape="circle">
+                <area target="iframe" alt="Bucuresti" title="Bucuresti" href="https://ro.wikipedia.org/wiki/Bucure%C8%99ti" coords="635,609,58" shape="circle">
+                <area target="iframe" alt="Cluj" title="Cluj" href="https://ro.wikipedia.org/wiki/Cluj-Napoca" coords="371,254,56" shape="circle">
+                <area target="iframe" alt="Sibiu" title="Sibiu" href="https://ro.wikipedia.org/wiki/Sibiu" coords="428,402,61" shape="circle">
+                <area target="iframe" alt="Iasi" title="Iasi" href="https://ro.wikipedia.org/wiki/Ia%C8%99i" coords="790,197,59" shape="circle">
+                <area target="iframe" alt="Craiova" title="Craiova" href="https://ro.wikipedia.org/wiki/Craiova" coords="602,688,457,553,190,491,285,585,265,613,381,694" shape="poly">
+            </map>
         </section>
         
-        <section id="produse">
-            <h2>Produse</h2>
-            <article>
-                <h3>Încălțăminte</h3>
-                <p>Cele mai bune papuci de sport la cele mai bune preturi!</p>
-                <img src="/resurse/imagini/incaltaminte1 mare.png" alt="Papuci sport" width="300" height="200">
-            </article>
-        </section>
-        
-        <section id="info">
-            <h2>Informații</h2>
-            <p>Pentru mai multe informatii despre sport puteti accesa <a href="https://ro.wikipedia.org/wiki/Sport" target="_blank">Wikipedia</a></p>
-            <iframe src="https://ro.wikipedia.org/wiki/Sport" width="100%" height="400" title="Sport Wikipedia"></iframe>
-        </section> -->
+        <!-<%- include('../fragmente/galerie', { imagini: imagini, cale_galerie: cale_galerie }) %>
     </main>
     
     <%- include('../fragmente/footer') %>
     
     <script>
         function changeTab(url, button) {
-            // Update iframe source
             document.getElementById('wiki-iframe').src = url;
             
-            // Remove active class from all buttons
             const allButtons = document.querySelectorAll('.tab-btn');
             allButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add active class to clicked button
             button.classList.add('active');
         }
     </script>
